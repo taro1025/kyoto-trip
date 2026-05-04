@@ -6,7 +6,7 @@
   <title>京都旅行のしおり - 5/5〜5/6</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
@@ -30,9 +30,7 @@
   </script>
   <style>
     body { background-color: #F5F4EC; }
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    
+
     .timeline-line {
       position: absolute;
       left: 1.25rem;
@@ -42,49 +40,39 @@
       background-color: #e5e7eb;
       z-index: 0;
     }
+
     .timeline-item:last-child .timeline-line {
-      display: none;
-    }
-    
-    details > summary {
-      list-style: none;
-    }
-    details > summary::-webkit-details-marker {
       display: none;
     }
   </style>
 </head>
 <body class="text-kyoto-dark antialiased pb-20">
-
   <div class="max-w-md mx-auto bg-white min-h-screen shadow-xl overflow-hidden relative">
 
-    <!-- ヘッダー -->
     <header class="relative bg-kyoto-dark text-white p-6 overflow-hidden">
       <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 16px 16px;"></div>
       <div class="relative z-10">
-        <p class="text-xs text-gray-300 font-bold tracking-widest mb-1"><i class="fa-solid fa-crown text-yellow-400 mr-1"></i> THE BEST TRIP</p>
+        <p class="text-xs text-gray-300 font-bold tracking-widest mb-1">
+          <i class="fa-solid fa-crown text-yellow-400 mr-1"></i> THE BEST TRIP
+        </p>
         <h1 class="text-3xl font-black mb-2">京都旅行のしおり</h1>
         <p class="text-sm font-medium"><i class="fa-solid fa-calendar-days mr-2"></i>5月5日(火) - 5月6日(水)</p>
-        <p class="text-sm font-medium mt-1"><i class="fa-solid fa-user-group mr-2"></i>俺 & りの</p>
+        <p class="text-sm font-medium mt-1"><i class="fa-solid fa-user-group mr-2"></i>俺 &amp; りの</p>
       </div>
     </header>
 
-    <!-- タブナビゲーション -->
     <nav class="flex border-b border-gray-200 bg-white sticky top-0 z-40">
       <button onclick="switchTab('day1')" id="tab-day1" class="flex-1 py-3 text-center font-bold text-kyoto-green border-b-2 border-kyoto-green transition-colors">1日目</button>
       <button onclick="switchTab('day2')" id="tab-day2" class="flex-1 py-3 text-center font-bold text-gray-400 border-b-2 border-transparent transition-colors">2日目</button>
       <button onclick="switchTab('info')" id="tab-info" class="flex-1 py-3 text-center font-bold text-gray-400 border-b-2 border-transparent transition-colors">予約情報</button>
     </nav>
 
-    <!-- メインコンテンツ -->
     <main class="p-4 bg-kyoto-bg min-h-screen">
 
-      <!-- ================= 1日目 ================= -->
       <div id="content-day1" class="tab-content block">
-        <h2 class="text-xl font-black mb-6 text-kyoto-green border-l-4 border-kyoto-green pl-3">5/5 (火) 絶景とバズり、そしてロマンチックな夜</h2>
-        
+        <h2 class="text-xl font-black mb-6 text-kyoto-green border-l-4 border-kyoto-green pl-3">5/5 (火) 座禅・清水・祇園の夜</h2>
+
         <div class="space-y-6 relative">
-          
           <div class="timeline-item relative z-10">
             <div class="timeline-line"></div>
             <div class="flex items-start">
@@ -92,8 +80,17 @@
                 <i class="fa-solid fa-train-subway text-blue-600 text-sm"></i>
               </div>
               <div class="ml-4 flex-1 pt-1">
-                <h3 class="text-lg font-bold">07:21 東京駅 出発</h3>
-                <p class="text-sm text-gray-600 mt-1">のぞみ119号 (2号車19番D/E席)</p>
+                <div class="flex justify-between items-start gap-3">
+                  <h3 class="text-lg font-bold">09:32 京都駅 到着</h3>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=京都駅" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="京都駅のGoogleマップを開く">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </a>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm text-gray-700">
+                  <p><span class="font-bold text-gray-900">移動:</span> -</p>
+                  <p><span class="font-bold text-gray-900">費用:</span> -</p>
+                  <p><span class="font-bold text-gray-900">滞在:</span> -</p>
+                </div>
               </div>
             </div>
           </div>
@@ -101,14 +98,42 @@
           <div class="timeline-item relative z-10">
             <div class="timeline-line"></div>
             <div class="flex items-start">
-              <div class="w-10 h-10 rounded-full bg-blue-100 border-2 border-white flex items-center justify-center z-10 shrink-0 shadow-sm">
-                <i class="fa-solid fa-location-dot text-blue-600 text-sm"></i>
+              <div class="w-10 h-10 rounded-full bg-kyoto-green border-2 border-white flex items-center justify-center z-10 shrink-0 shadow-sm">
+                <i class="fa-solid fa-om text-white text-sm"></i>
               </div>
               <div class="ml-4 flex-1 pt-1">
-                <h3 class="text-lg font-bold">09:32 京都駅 到着</h3>
-                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm">
-                  <p class="font-bold text-kyoto-red"><i class="fa-solid fa-lightbulb mr-1"></i>プロの小技</p>
-                  <p class="text-gray-600 mt-1">駅の「Crosta京都」で荷物をホテルに配送手配！手ぶらで観光開始。<br><span class="text-xs text-gray-500">（手続き約20分。10:00頃タクシーかバスで出発）</span></p>
+                <div class="flex justify-between items-start gap-3">
+                  <h3 class="text-lg font-bold">10:15 建仁寺 両足院</h3>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=建仁寺+両足院" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="建仁寺 両足院のGoogleマップを開く">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </a>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm text-gray-700">
+                  <p><span class="font-bold text-gray-900">移動:</span> 🚇 地下鉄＋阪急＋徒歩 (約20分)</p>
+                  <p><span class="font-bold text-gray-900">費用:</span> 520円</p>
+                  <p><span class="font-bold text-gray-900">滞在:</span> 60分 (座禅)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item relative z-10">
+            <div class="timeline-line"></div>
+            <div class="flex items-start">
+              <div class="w-10 h-10 rounded-full bg-orange-100 border-2 border-white flex items-center justify-center z-10 shrink-0 shadow-sm">
+                <i class="fa-solid fa-utensils text-orange-600 text-sm"></i>
+              </div>
+              <div class="ml-4 flex-1 pt-1">
+                <div class="flex justify-between items-start gap-3">
+                  <h3 class="text-lg font-bold">12:00 祇園周辺ランチ</h3>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=祇園+ランチ" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="祇園周辺ランチのGoogleマップを開く">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </a>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm text-gray-700">
+                  <p><span class="font-bold text-gray-900">移動:</span> 🚶 徒歩</p>
+                  <p><span class="font-bold text-gray-900">費用:</span> -</p>
+                  <p><span class="font-bold text-gray-900">滞在:</span> 60分</p>
                 </div>
               </div>
             </div>
@@ -121,26 +146,21 @@
                 <i class="fa-solid fa-torii-gate text-white text-sm"></i>
               </div>
               <div class="ml-4 flex-1 pt-1">
-                <div class="flex justify-between items-start">
-                  <h3 class="text-lg font-bold">10:45 清水寺</h3>
-                  <a href="https://www.google.com/maps/search/?api=1&query=清水寺" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full"><i class="fa-solid fa-map-location-dot"></i></a>
+                <div class="flex justify-between items-start gap-3">
+                  <h3 class="text-lg font-bold">13:30 清水寺</h3>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=清水寺" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="清水寺のGoogleマップを開く">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </a>
                 </div>
-                <p class="text-sm text-gray-600 mt-1">京都駅からバス+徒歩で約45分、タクシーで約15分。新緑の「清水の舞台」で絶景を堪能。</p>
-                <details class="mt-2 bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden group">
-                  <summary class="p-3 cursor-pointer flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                    <span class="font-bold text-kyoto-red text-sm"><i class="fa-solid fa-fire mr-1"></i>凄さ解説を開く</span>
-                    <i class="fa-solid fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i>
-                  </summary>
-                  <div class="p-3 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">
-                    <span class="font-bold block mb-1">【釘ゼロの超絶エンジニアリング】</span>
-                    あの巨大な舞台、実は<strong class="text-kyoto-red">釘を1本も使っていません。</strong>巨大な木材をパズルのように組む技術だけで、断崖絶壁に建ち、地震にも耐えます。当時の大工の異常な計算能力が体感できるヤバい建築です。
-                  </div>
-                </details>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm text-gray-700">
+                  <p><span class="font-bold text-gray-900">移動:</span> 🚌 市バス＋徒歩 (約15分)</p>
+                  <p><span class="font-bold text-gray-900">費用:</span> 460円</p>
+                  <p><span class="font-bold text-gray-900">滞在:</span> 90分</p>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- 追加スポット：mochi mochi -->
           <div class="timeline-item relative z-10">
             <div class="timeline-line"></div>
             <div class="flex items-start">
@@ -148,21 +168,17 @@
                 <i class="fa-solid fa-ice-cream text-pink-500 text-sm"></i>
               </div>
               <div class="ml-4 flex-1 pt-1">
-                <div class="flex justify-between items-start">
-                  <h3 class="text-lg font-bold">12:00 mochi mochi</h3>
-                  <a href="https://www.google.com/maps/search/?api=1&query=Mochi+Mochi+京都+清水" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full"><i class="fa-solid fa-map-location-dot"></i></a>
+                <div class="flex justify-between items-start gap-3">
+                  <h3 class="text-lg font-bold">15:00 mochi mochi</h3>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=mochi+mochi+京都" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="mochi mochiのGoogleマップを開く">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </a>
                 </div>
-                <p class="text-sm text-gray-600 mt-1">清水寺から産寧坂へ下る途中。SNSで超話題のバズりスイーツ！</p>
-                <details class="mt-2 bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden group">
-                  <summary class="p-3 cursor-pointer flex justify-between items-center bg-pink-50 hover:bg-pink-100 transition-colors">
-                    <span class="font-bold text-pink-600 text-sm"><i class="fa-solid fa-star mr-1"></i>凄さ解説を開く</span>
-                    <i class="fa-solid fa-chevron-down text-pink-400 group-open:rotate-180 transition-transform"></i>
-                  </summary>
-                  <div class="p-3 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">
-                    <span class="font-bold block mb-1">【目の前で繰り広げられる実演！】</span>
-                    ただの和スイーツ店ではありません。職人さんが<strong class="text-pink-600">リズミカルな掛け声とともに杵と臼でお餅をつく実演パフォーマンス</strong>が見られます！つきたての驚くほど柔らかいお餅で作るストロベリーチョコ大福などは、動画映えも味も最高レベルです。
-                  </div>
-                </details>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm text-gray-700">
+                  <p><span class="font-bold text-gray-900">移動:</span> 🚶 徒歩</p>
+                  <p><span class="font-bold text-gray-900">費用:</span> -</p>
+                  <p><span class="font-bold text-gray-900">滞在:</span> 30分</p>
+                </div>
               </div>
             </div>
           </div>
@@ -170,15 +186,21 @@
           <div class="timeline-item relative z-10">
             <div class="timeline-line"></div>
             <div class="flex items-start">
-              <div class="w-10 h-10 rounded-full bg-orange-100 border-2 border-white flex items-center justify-center z-10 shrink-0 shadow-sm">
-                <i class="fa-solid fa-utensils text-orange-600 text-sm"></i>
+              <div class="w-10 h-10 rounded-full bg-yellow-100 border-2 border-white flex items-center justify-center z-10 shrink-0 shadow-sm">
+                <i class="fa-solid fa-person-walking text-yellow-700 text-sm"></i>
               </div>
               <div class="ml-4 flex-1 pt-1">
-                <div class="flex justify-between items-start">
-                  <h3 class="text-lg font-bold">12:45 ROOT2 RIVERSIDEでランチ</h3>
-                  <a href="https://www.google.com/maps/search/?api=1&query=ROOT2+RIVERSIDE+京都府京都市右京区梅ケ畑殿畑町35" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full"><i class="fa-solid fa-map-location-dot"></i></a>
+                <div class="flex justify-between items-start gap-3">
+                  <h3 class="text-lg font-bold">15:30 産寧坂〜祇園 散策</h3>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=産寧坂+祇園" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="産寧坂〜祇園のGoogleマップを開く">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </a>
                 </div>
-                <p class="text-sm text-gray-600 mt-1">清水エリアからタクシーで移動。住所: 京都府京都市右京区梅ケ畑殿畑町35（Google Map掲載情報）。</p>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm text-gray-700">
+                  <p><span class="font-bold text-gray-900">移動:</span> 🚶 徒歩 (下り坂で移動)</p>
+                  <p><span class="font-bold text-gray-900">費用:</span> -</p>
+                  <p><span class="font-bold text-gray-900">滞在:</span> 120分</p>
+                </div>
               </div>
             </div>
           </div>
@@ -186,15 +208,21 @@
           <div class="timeline-item relative z-10">
             <div class="timeline-line"></div>
             <div class="flex items-start">
-              <div class="w-10 h-10 rounded-full bg-kyoto-green border-2 border-white flex items-center justify-center z-10 shrink-0 shadow-sm">
-                <i class="fa-brands fa-pagelines text-white text-sm"></i>
+              <div class="w-10 h-10 rounded-full bg-red-100 border-2 border-white flex items-center justify-center z-10 shrink-0 shadow-sm">
+                <i class="fa-solid fa-pizza-slice text-red-600 text-sm"></i>
               </div>
               <div class="ml-4 flex-1 pt-1">
-                <div class="flex justify-between items-start">
-                  <h3 class="text-lg font-bold">15:30 建仁寺（祇園）</h3>
-                  <a href="https://www.google.com/maps/search/?api=1&query=建仁寺" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full"><i class="fa-solid fa-map-location-dot"></i></a>
+                <div class="flex justify-between items-start gap-3">
+                  <h3 class="text-lg font-bold">18:00 PIZZA SALVATORE CUOMO &amp; GRILL 京都</h3>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=PIZZA+SALVATORE+CUOMO+%26+GRILL+京都" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="PIZZA SALVATORE CUOMO &amp; GRILL 京都のGoogleマップを開く">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </a>
                 </div>
-                <p class="text-sm text-gray-600 mt-1">ROOT2 RIVERSIDEから移動して祇園エリアへ。京都最古の禅寺。双龍図や枯山水の庭園でゆっくり休憩。<br><span class="text-xs text-gray-500">（拝観後は祇園白川の石畳を散歩して時間調整）</span></p>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm text-gray-700">
+                  <p><span class="font-bold text-gray-900">移動:</span> 🚶 徒歩</p>
+                  <p><span class="font-bold text-gray-900">費用:</span> -</p>
+                  <p><span class="font-bold text-gray-900">滞在:</span> 120分</p>
+                </div>
               </div>
             </div>
           </div>
@@ -206,31 +234,16 @@
                 <i class="fa-solid fa-moon text-purple-600 text-sm"></i>
               </div>
               <div class="ml-4 flex-1 pt-1">
-                <div class="flex justify-between items-start">
-                  <h3 class="text-lg font-bold">17:30 先斗町で夜ご飯</h3>
-                  <a href="https://www.google.com/maps/search/?api=1&query=先斗町" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full"><i class="fa-solid fa-map-location-dot"></i></a>
+                <div class="flex justify-between items-start gap-3">
+                  <h3 class="text-lg font-bold">20:30 in the Moon（余裕があれば）</h3>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=in+the+Moon+京都" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="in the MoonのGoogleマップを開く">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </a>
                 </div>
-                <p class="text-sm text-gray-600 mt-1">祇園から徒歩約10分。鴨川沿いの細い路地で、ローカルな居酒屋・サパー体験。提灯の灯りがエモい！</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 追加スポット：K36 ディナー -->
-          <div class="timeline-item relative z-10">
-            <div class="timeline-line"></div>
-            <div class="flex items-start">
-              <div class="w-10 h-10 rounded-full bg-indigo-100 border-2 border-white flex items-center justify-center z-10 shrink-0 shadow-sm">
-                <i class="fa-solid fa-utensils text-indigo-600 text-sm"></i>
-              </div>
-              <div class="ml-4 flex-1 pt-1">
-                <div class="flex justify-between items-start">
-                  <h3 class="text-lg font-bold leading-tight">19:30 K36でディナー</h3>
-                  <a href="https://www.google.com/maps/search/?api=1&query=K36+The+Hotel+Seiryu+Kyoto+Kiyomizu" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full mt-1"><i class="fa-solid fa-map-location-dot"></i></a>
-                </div>
-                <p class="text-sm text-gray-600 mt-1">先斗町から移動。The Hotel Seiryu Kyoto Kiyomizu 4Fで夜景ディナー。</p>
-                <div class="mt-2 bg-white rounded-lg shadow-sm border border-gray-200 p-3 text-sm text-gray-700">
-                  <p><span class="font-bold">電話:</span> 050-5570-7371</p>
-                  <p><span class="font-bold">住所:</span> 京都府京都市東山区清水2-204-2 The Hotel Seiryu Kyoto Kiyomizu 4F</p>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm text-gray-700">
+                  <p><span class="font-bold text-gray-900">移動:</span> 🚶 徒歩 (鴨川を渡ってすぐ)</p>
+                  <p><span class="font-bold text-gray-900">費用:</span> -</p>
+                  <p><span class="font-bold text-gray-900">滞在:</span> 90分 (夜景)</p>
                 </div>
               </div>
             </div>
@@ -242,78 +255,44 @@
                 <i class="fa-solid fa-bed text-white text-sm"></i>
               </div>
               <div class="ml-4 flex-1 pt-1">
-                <div class="flex justify-between items-start">
-                  <h3 class="text-lg font-bold">21:30 ホテルチェックイン</h3>
-                  <a href="https://www.google.com/maps/search/?api=1&query=エスペリアホテル京都" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full"><i class="fa-solid fa-map-location-dot"></i></a>
+                <div class="flex justify-between items-start gap-3">
+                  <h3 class="text-lg font-bold">22:00 ホテルへ</h3>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=エスペリアホテル京都" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="ホテルのGoogleマップを開く">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </a>
                 </div>
-                <p class="text-sm text-gray-600 mt-1">K36からタクシーで約15分。<br>荷物は部屋に届いています！</p>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm text-gray-700">
+                  <p><span class="font-bold text-gray-900">移動:</span> 🚇 阪急「京都河原町」→「大宮」＋徒歩</p>
+                  <p><span class="font-bold text-gray-900">費用:</span> 340円</p>
+                  <p><span class="font-bold text-gray-900">滞在:</span> -</p>
+                </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
-      <!-- ================= 2日目 ================= -->
       <div id="content-day2" class="tab-content hidden">
-        <h2 class="text-xl font-black mb-6 text-kyoto-green border-l-4 border-kyoto-green pl-3">5/6 (水) 究極の「静」と「動」のギャップ</h2>
-        
+        <h2 class="text-xl font-black mb-6 text-kyoto-green border-l-4 border-kyoto-green pl-3">5/6 (水) 金閣寺・ROOT2・龍安寺</h2>
+
         <div class="space-y-6 relative">
-          
           <div class="timeline-item relative z-10">
             <div class="timeline-line"></div>
             <div class="flex items-start">
-              <div class="w-10 h-10 rounded-full bg-orange-100 border-2 border-white flex items-center justify-center z-10 shrink-0 shadow-sm">
-                <i class="fa-solid fa-mug-hot text-orange-600 text-sm"></i>
+              <div class="w-10 h-10 rounded-full bg-gray-800 border-2 border-white flex items-center justify-center z-10 shrink-0 shadow-sm">
+                <i class="fa-solid fa-hotel text-white text-sm"></i>
               </div>
               <div class="ml-4 flex-1 pt-1">
-                <h3 class="text-lg font-bold">08:00 ホテルで朝食</h3>
-                <p class="text-sm text-gray-600 mt-1">09:30にはチェックアウト。</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item relative z-10">
-            <div class="timeline-line"></div>
-            <div class="flex items-start">
-              <div class="w-10 h-10 rounded-full bg-kyoto-green border-2 border-white flex items-center justify-center z-10 shrink-0 shadow-sm">
-                <i class="fa-solid fa-om text-white text-sm"></i>
-              </div>
-              <div class="ml-4 flex-1 pt-1">
-                <div class="flex justify-between items-start">
-                  <h3 class="text-lg font-bold">10:00 座禅体験</h3>
-                  <a href="https://www.google.com/maps/search/?api=1&query=妙心寺" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full"><i class="fa-solid fa-map-location-dot"></i></a>
+                <div class="flex justify-between items-start gap-3">
+                  <h3 class="text-lg font-bold">09:30 ホテル 出発</h3>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=エスペリアホテル京都" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="ホテルのGoogleマップを開く">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </a>
                 </div>
-                <p class="text-sm text-gray-600 mt-1">ホテルからタクシーで約15分（妙心寺周辺などを想定）。</p>
-                <details class="mt-2 bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden group">
-                  <summary class="p-3 cursor-pointer flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                    <span class="font-bold text-kyoto-red text-sm"><i class="fa-solid fa-fire mr-1"></i>凄さ解説を開く</span>
-                    <i class="fa-solid fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i>
-                  </summary>
-                  <div class="p-3 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">
-                    <span class="font-bold block mb-1">【究極の脳内デフラグ】</span>
-                    何もせず、ただ座る。それだけなのに信じられないほど頭がクリアになります。日々スマホや仕事で情報過多な現代人にこそ必要な<strong class="text-kyoto-red">「思考の強制シャットダウン」</strong>です。この「静」の極みが、次のランチの伏線になります。
-                  </div>
-                </details>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item relative z-10">
-            <div class="timeline-line"></div>
-            <div class="flex items-start">
-              <div class="w-10 h-10 rounded-full bg-blue-100 border-2 border-white flex items-center justify-center z-10 shrink-0 shadow-sm">
-                <i class="fa-solid fa-water text-blue-600 text-sm"></i>
-              </div>
-              <div class="ml-4 flex-1 pt-1">
-                <div class="flex justify-between items-start">
-                  <h3 class="text-lg font-bold">12:30 めん馬鹿一代（ランチ）</h3>
-                  <a href="https://www.google.com/maps/search/?api=1&query=めん馬鹿一代" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full"><i class="fa-solid fa-map-location-dot"></i></a>
-                </div>
-                <p class="text-sm text-gray-600 mt-1">座禅後にタクシーで移動（約10〜15分）。インパクト重視のランチ枠。</p>
-                <div class="bg-blue-50 border border-blue-100 rounded-lg p-3 mt-2 text-sm text-blue-900">
-                  <p class="font-bold"><i class="fa-solid fa-circle-exclamation mr-1"></i>混雑注意</p>
-                  <p class="mt-1">人気店のため待ち時間が発生する場合があります。時間に余裕を持って訪問するのがおすすめ。</p>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm text-gray-700">
+                  <p><span class="font-bold text-gray-900">移動:</span> -</p>
+                  <p><span class="font-bold text-gray-900">費用:</span> -</p>
+                  <p><span class="font-bold text-gray-900">滞在:</span> -</p>
                 </div>
               </div>
             </div>
@@ -326,21 +305,39 @@
                 <i class="fa-solid fa-coins text-yellow-600 text-sm"></i>
               </div>
               <div class="ml-4 flex-1 pt-1">
-                <div class="flex justify-between items-start">
-                  <h3 class="text-lg font-bold">15:30 金閣寺</h3>
-                  <a href="https://www.google.com/maps/search/?api=1&query=金閣寺" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full"><i class="fa-solid fa-map-location-dot"></i></a>
+                <div class="flex justify-between items-start gap-3">
+                  <h3 class="text-lg font-bold">10:15 金閣寺</h3>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=金閣寺" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="金閣寺のGoogleマップを開く">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </a>
                 </div>
-                <p class="text-sm text-gray-600 mt-1">貴船エリアからタクシーで移動（約35〜45分）。黄金の絶景へ！</p>
-                <details class="mt-2 bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden group">
-                  <summary class="p-3 cursor-pointer flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                    <span class="font-bold text-kyoto-red text-sm"><i class="fa-solid fa-fire mr-1"></i>凄さ解説を開く</span>
-                    <i class="fa-solid fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i>
-                  </summary>
-                  <div class="p-3 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">
-                    <span class="font-bold block mb-1">【超ド派手な権力アピール】</span>
-                    わびさび？いいえ、金閣寺は<strong class="text-kyoto-gold">本物の金箔約20万枚</strong>で覆われた超ド派手建築です。当時のトップが「俺ってこんなに凄いんだぜ！」と見せつけるために作った究極の成金デザイン。理屈抜きの視覚インパクトです。
-                  </div>
-                </details>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm text-gray-700">
+                  <p><span class="font-bold text-gray-900">移動:</span> 🚇 JR「丹波口」→「円町」＋🚌市バス (約30分)</p>
+                  <p><span class="font-bold text-gray-900">費用:</span> 840円</p>
+                  <p><span class="font-bold text-gray-900">滞在:</span> 60分</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item relative z-10">
+            <div class="timeline-line"></div>
+            <div class="flex items-start">
+              <div class="w-10 h-10 rounded-full bg-orange-100 border-2 border-white flex items-center justify-center z-10 shrink-0 shadow-sm">
+                <i class="fa-solid fa-utensils text-orange-600 text-sm"></i>
+              </div>
+              <div class="ml-4 flex-1 pt-1">
+                <div class="flex justify-between items-start gap-3">
+                  <h3 class="text-lg font-bold">11:30 ROOT2 RIVERSIDE</h3>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=ROOT2+RIVERSIDE+京都" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="ROOT2 RIVERSIDEのGoogleマップを開く">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </a>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm text-gray-700">
+                  <p><span class="font-bold text-gray-900">移動:</span> 🚕 タクシー (約20分)</p>
+                  <p><span class="font-bold text-gray-900">費用:</span> 約3,000円</p>
+                  <p><span class="font-bold text-gray-900">滞在:</span> 120分 (ランチ)</p>
+                </div>
               </div>
             </div>
           </div>
@@ -352,21 +349,39 @@
                 <i class="fa-solid fa-cubes text-gray-600 text-sm"></i>
               </div>
               <div class="ml-4 flex-1 pt-1">
-                <div class="flex justify-between items-start">
-                  <h3 class="text-lg font-bold">17:00 龍安寺の石庭</h3>
-                  <a href="https://www.google.com/maps/search/?api=1&query=龍安寺" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full"><i class="fa-solid fa-map-location-dot"></i></a>
+                <div class="flex justify-between items-start gap-3">
+                  <h3 class="text-lg font-bold">14:00 龍安寺</h3>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=龍安寺" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="龍安寺のGoogleマップを開く">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </a>
                 </div>
-                <p class="text-sm text-gray-600 mt-1">金閣寺から「きぬかけの路」を徒歩約20分、またはバスで約5分。有名な枯山水。</p>
-                <details class="mt-2 bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden group">
-                  <summary class="p-3 cursor-pointer flex justify-between items-center bg-gray-50 hover:bg-gray-100 transition-colors">
-                    <span class="font-bold text-kyoto-red text-sm"><i class="fa-solid fa-fire mr-1"></i>凄さ解説を開く</span>
-                    <i class="fa-solid fa-chevron-down text-gray-400 group-open:rotate-180 transition-transform"></i>
-                  </summary>
-                  <div class="p-3 text-sm text-gray-700 bg-white border-t border-gray-100 leading-relaxed">
-                    <span class="font-bold block mb-1">【計算し尽くされた空間デザイン】</span>
-                    15個の石が置かれているだけですが、<strong class="text-kyoto-red">どの角度から見ても必ず1個の石が隠れて見えない</strong>ように配置されています。「完璧なものはない」というメッセージを言葉ではなく空間で表現した、天才的なUXデザインです。
-                  </div>
-                </details>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm text-gray-700">
+                  <p><span class="font-bold text-gray-900">移動:</span> 🚕 タクシー (約15分)</p>
+                  <p><span class="font-bold text-gray-900">費用:</span> 約2,500円</p>
+                  <p><span class="font-bold text-gray-900">滞在:</span> 60分</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item relative z-10">
+            <div class="timeline-line"></div>
+            <div class="flex items-start">
+              <div class="w-10 h-10 rounded-full bg-blue-100 border-2 border-white flex items-center justify-center z-10 shrink-0 shadow-sm">
+                <i class="fa-solid fa-train text-blue-600 text-sm"></i>
+              </div>
+              <div class="ml-4 flex-1 pt-1">
+                <div class="flex justify-between items-start gap-3">
+                  <h3 class="text-lg font-bold">15:30 京都駅へ</h3>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=京都駅" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="京都駅のGoogleマップを開く">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </a>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm text-gray-700">
+                  <p><span class="font-bold text-gray-900">移動:</span> 🚌 市バス＋🚇 JR「円町」→「京都」 (約40分)</p>
+                  <p><span class="font-bold text-gray-900">費用:</span> 840円</p>
+                  <p><span class="font-bold text-gray-900">滞在:</span> -</p>
+                </div>
               </div>
             </div>
           </div>
@@ -378,27 +393,17 @@
                 <i class="fa-solid fa-store text-pink-600 text-sm"></i>
               </div>
               <div class="ml-4 flex-1 pt-1">
-                <div class="flex justify-between items-start">
-                  <h3 class="text-lg font-bold">18:15 京都駅周辺（早めに夕食）</h3>
-                  <a href="https://www.google.com/maps/search/?api=1&query=錦市場" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full"><i class="fa-solid fa-map-location-dot"></i></a>
+                <div class="flex justify-between items-start gap-3">
+                  <h3 class="text-lg font-bold">16:30 京都駅 到着</h3>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=京都駅" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="京都駅のGoogleマップを開く">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </a>
                 </div>
-                <p class="text-sm text-gray-600 mt-1">龍安寺からタクシーで京都駅へ約30分。新幹線前に駅ビルで夕食＆お土産。</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="timeline-item relative z-10">
-            <div class="timeline-line"></div>
-            <div class="flex items-start">
-              <div class="w-10 h-10 rounded-full bg-blue-100 border-2 border-white flex items-center justify-center z-10 shrink-0 shadow-sm">
-                <i class="fa-solid fa-bag-shopping text-blue-600 text-sm"></i>
-              </div>
-              <div class="ml-4 flex-1 pt-1">
-                <div class="flex justify-between items-start">
-                  <h3 class="text-lg font-bold">（夜）貴船 ひろ文（川床）</h3>
-                  <a href="https://www.google.com/maps/search/?api=1&query=貴船+ひろ文" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full"><i class="fa-solid fa-map-location-dot"></i></a>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm text-gray-700">
+                  <p><span class="font-bold text-gray-900">移動:</span> -</p>
+                  <p><span class="font-bold text-gray-900">費用:</span> -</p>
+                  <p><span class="font-bold text-gray-900">滞在:</span> 180分 (夕食等)</p>
                 </div>
-                <p class="text-sm text-gray-600 mt-1">夜の川床枠。時間に余裕がある場合は、龍安寺からタクシー＋叡電で北上（約60〜75分）。</p>
               </div>
             </div>
           </div>
@@ -406,23 +411,30 @@
           <div class="timeline-item relative z-10">
             <div class="flex items-start">
               <div class="w-10 h-10 rounded-full bg-gray-800 border-2 border-white flex items-center justify-center z-10 shrink-0 shadow-sm">
-                <i class="fa-solid fa-train text-white text-sm"></i>
+                <i class="fa-solid fa-train-subway text-white text-sm"></i>
               </div>
               <div class="ml-4 flex-1 pt-1">
-                <h3 class="text-lg font-bold">20:21 京都駅 出発</h3>
-                <p class="text-sm text-gray-600 mt-1">のぞみ56号 (6号車6番A/B席)<br>22:33 東京着、お疲れ様でした。</p>
+                <div class="flex justify-between items-start gap-3">
+                  <h3 class="text-lg font-bold">20:21 新幹線 出発</h3>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=京都駅" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="京都駅のGoogleマップを開く">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                  </a>
+                </div>
+                <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-100 mt-2 text-sm text-gray-700">
+                  <p><span class="font-bold text-gray-900">移動:</span> -</p>
+                  <p><span class="font-bold text-gray-900">費用:</span> -</p>
+                  <p><span class="font-bold text-gray-900">滞在:</span> -</p>
+                </div>
+                <p class="text-sm text-gray-600 mt-2">のぞみ56号 (6号車6番A/B席) / 22:33 東京着</p>
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
-      <!-- ================= 予約情報 ================= -->
       <div id="content-info" class="tab-content hidden">
         <h2 class="text-xl font-black mb-6 text-kyoto-dark border-l-4 border-gray-800 pl-3">予約情報まとめ</h2>
-        
-        <!-- 新幹線 -->
+
         <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden mb-6">
           <div class="bg-blue-50 px-4 py-3 border-b border-blue-100 flex items-center">
             <i class="fa-solid fa-train text-blue-600 mr-2"></i>
@@ -442,16 +454,22 @@
           </div>
         </div>
 
-        <!-- ホテル -->
         <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
           <div class="bg-kyoto-dark px-4 py-3 border-b border-gray-700 flex items-center">
             <i class="fa-solid fa-hotel text-white mr-2"></i>
             <h3 class="font-bold text-white">ホテル宿泊情報</h3>
           </div>
           <div class="p-4">
-            <h4 class="text-lg font-bold mb-1">エスペリアホテル京都</h4>
-            <p class="text-xs text-gray-500 mb-4">予約番号：5PM8L7</p>
-            
+            <div class="flex justify-between items-start gap-3">
+              <div>
+                <h4 class="text-lg font-bold mb-1">エスペリアホテル京都</h4>
+                <p class="text-xs text-gray-500 mb-4">予約番号：5PM8L7</p>
+              </div>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=エスペリアホテル京都" target="_blank" class="text-blue-500 hover:text-blue-700 bg-blue-50 p-2 rounded-full shrink-0" aria-label="エスペリアホテル京都のGoogleマップを開く">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </a>
+            </div>
+
             <ul class="text-sm space-y-3 text-gray-700">
               <li class="flex"><i class="fa-solid fa-door-open w-5 text-gray-400 mt-0.5"></i> <span>禁煙ハリウッドツイン (シャワーブースのみ) / 大人2名</span></li>
               <li class="flex"><i class="fa-solid fa-utensils w-5 text-gray-400 mt-0.5"></i> <span>朝食付き</span></li>
@@ -461,9 +479,7 @@
             </ul>
           </div>
         </div>
-
       </div>
-
     </main>
   </div>
 
@@ -473,16 +489,16 @@
         el.classList.add('hidden');
         el.classList.remove('block');
       });
-      
+
       document.querySelectorAll('nav button').forEach(el => {
         el.classList.remove('text-kyoto-green', 'border-kyoto-green');
         el.classList.add('text-gray-400', 'border-transparent');
       });
-      
+
       const content = document.getElementById('content-' + tabId);
       content.classList.remove('hidden');
       content.classList.add('block');
-      
+
       const tab = document.getElementById('tab-' + tabId);
       tab.classList.remove('text-gray-400', 'border-transparent');
       tab.classList.add('text-kyoto-green', 'border-kyoto-green');
