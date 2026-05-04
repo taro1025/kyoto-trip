@@ -177,6 +177,7 @@
     }
 
     .tabs button:focus-visible,
+    .route-link:focus-visible,
     .map-btn:focus-visible {
       outline: 3px solid rgba(183, 131, 47, 0.55);
       outline-offset: 2px;
@@ -250,6 +251,155 @@
       border: 1px solid var(--line);
       font-size: 0.76rem;
       font-weight: 800;
+    }
+
+    .route-overview {
+      margin: 0 0 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .route-overview-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px;
+    }
+
+    .route-overview h3 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .route-overview p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.7;
+    }
+
+    .route-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-width: 104px;
+      min-height: 42px;
+      border-radius: 8px;
+      padding: 8px 10px;
+      color: var(--white);
+      background: var(--indigo);
+      font-size: 0.78rem;
+      font-weight: 900;
+      text-decoration: none;
+      text-align: center;
+      flex: 0 0 auto;
+    }
+
+    .schematic-map {
+      position: relative;
+      height: 238px;
+      margin: 0 14px 14px;
+      border: 1px solid rgba(45, 103, 112, 0.18);
+      border-radius: 8px;
+      background:
+        linear-gradient(90deg, transparent 0 48%, rgba(45, 103, 112, 0.13) 48% 53%, transparent 53%),
+        radial-gradient(circle at 72% 49%, rgba(155, 61, 49, 0.11), transparent 28%),
+        radial-gradient(circle at 19% 74%, rgba(183, 131, 47, 0.12), transparent 26%),
+        #fbf7ed;
+      overflow: hidden;
+    }
+
+    .schematic-map svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .route-path {
+      fill: none;
+      stroke: var(--red);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 2 9;
+    }
+
+    .map-area {
+      position: absolute;
+      color: rgba(35, 33, 29, 0.42);
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+    }
+
+    .map-pin {
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      display: grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      border: 2px solid var(--white);
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--green);
+      font-size: 0.76rem;
+      font-weight: 900;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 5px 14px rgba(35, 33, 29, 0.22);
+    }
+
+    .map-pin.food {
+      background: var(--gold);
+    }
+
+    .map-pin.walk {
+      background: var(--teal);
+    }
+
+    .map-pin.night {
+      background: var(--indigo);
+    }
+
+    .route-legend {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      margin: 0;
+      padding: 0;
+      background: var(--line);
+      border-top: 1px solid var(--line);
+      list-style: none;
+    }
+
+    .route-legend li {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      min-width: 0;
+      padding: 9px 10px;
+      background: rgba(255, 253, 247, 0.72);
+      font-size: 0.76rem;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .route-legend span {
+      display: grid;
+      place-items: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--green);
+      font-size: 0.68rem;
+      flex: 0 0 auto;
     }
 
     .timeline {
@@ -520,6 +670,46 @@
           <span>夜景は余裕があれば</span>
         </div>
 
+        <section class="route-overview" aria-label="1日目の経路まとめ">
+          <div class="route-overview-head">
+            <div>
+              <h3>1日目の回り方</h3>
+              <p>京都駅から祇園・東山へ入り、清水寺から産寧坂を下って四条方面へ。夜は鴨川周辺から大宮のホテルへ戻ります。</p>
+            </div>
+            <a class="route-link" href="https://www.google.com/maps/dir/京都駅/建仁寺+両足院/祇園/清水寺/mochi+mochi+京都/産寧坂/PIZZA+SALVATORE+CUOMO+%26+GRILL+京都/in+the+Moon+京都/エスペリアホテル京都" target="_blank" rel="noopener">
+              <i class="fa-solid fa-route"></i>全体ルート
+            </a>
+          </div>
+          <div class="schematic-map" aria-hidden="true">
+            <span class="map-area" style="left: 10%; top: 78%;">京都駅</span>
+            <span class="map-area" style="left: 54%; top: 30%;">鴨川</span>
+            <span class="map-area" style="right: 8%; top: 46%;">東山</span>
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+              <path class="route-path" d="M 18 80 C 34 68, 43 50, 55 43 S 76 42, 76 55 S 63 69, 55 58 S 45 48, 51 42 S 38 60, 20 61" />
+            </svg>
+            <span class="map-pin" style="--x: 18%; --y: 80%;">1</span>
+            <span class="map-pin" style="--x: 55%; --y: 43%;">2</span>
+            <span class="map-pin food" style="--x: 58%; --y: 47%;">3</span>
+            <span class="map-pin" style="--x: 76%; --y: 55%;">4</span>
+            <span class="map-pin food" style="--x: 70%; --y: 62%;">5</span>
+            <span class="map-pin walk" style="--x: 61%; --y: 59%;">6</span>
+            <span class="map-pin food" style="--x: 52%; --y: 47%;">7</span>
+            <span class="map-pin night" style="--x: 47%; --y: 42%;">8</span>
+            <span class="map-pin night" style="--x: 20%; --y: 61%;">9</span>
+          </div>
+          <ol class="route-legend">
+            <li><span>1</span>京都駅</li>
+            <li><span>2</span>両足院</li>
+            <li><span>3</span>祇園ランチ</li>
+            <li><span>4</span>清水寺</li>
+            <li><span>5</span>mochi mochi</li>
+            <li><span>6</span>産寧坂〜祇園</li>
+            <li><span>7</span>ディナー</li>
+            <li><span>8</span>in the Moon</li>
+            <li><span>9</span>ホテル</li>
+          </ol>
+        </section>
+
         <div class="timeline">
           <article class="stop">
             <div class="stop-time"><time>09:32</time><span>到着</span></div>
@@ -697,6 +887,42 @@
           <span>ROOT2 120分</span>
           <span>京都駅で夕食 180分</span>
         </div>
+
+        <section class="route-overview" aria-label="2日目の経路まとめ">
+          <div class="route-overview-head">
+            <div>
+              <h3>2日目の回り方</h3>
+              <p>ホテルから北西へ上がって金閣寺へ。ROOT2 RIVERSIDE と龍安寺を同じ北西エリアでまとめ、最後に京都駅へ戻ります。</p>
+            </div>
+            <a class="route-link" href="https://www.google.com/maps/dir/エスペリアホテル京都/金閣寺/ROOT2+RIVERSIDE+京都/龍安寺/京都駅" target="_blank" rel="noopener">
+              <i class="fa-solid fa-route"></i>全体ルート
+            </a>
+          </div>
+          <div class="schematic-map" aria-hidden="true">
+            <span class="map-area" style="left: 7%; top: 14%;">北西エリア</span>
+            <span class="map-area" style="left: 16%; top: 74%;">ホテル</span>
+            <span class="map-area" style="right: 14%; top: 80%;">京都駅</span>
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+              <path class="route-path" d="M 24 76 C 22 56, 23 35, 30 25 S 12 22, 13 16 S 22 26, 34 32 S 54 57, 72 80" />
+            </svg>
+            <span class="map-pin night" style="--x: 24%; --y: 76%;">1</span>
+            <span class="map-pin" style="--x: 30%; --y: 25%;">2</span>
+            <span class="map-pin food" style="--x: 13%; --y: 16%;">3</span>
+            <span class="map-pin" style="--x: 34%; --y: 32%;">4</span>
+            <span class="map-pin walk" style="--x: 58%; --y: 62%;">5</span>
+            <span class="map-pin food" style="--x: 72%; --y: 80%;">6</span>
+            <span class="map-pin night" style="--x: 80%; --y: 83%;">7</span>
+          </div>
+          <ol class="route-legend">
+            <li><span>1</span>ホテル</li>
+            <li><span>2</span>金閣寺</li>
+            <li><span>3</span>ROOT2</li>
+            <li><span>4</span>龍安寺</li>
+            <li><span>5</span>京都駅へ</li>
+            <li><span>6</span>京都駅</li>
+            <li><span>7</span>新幹線</li>
+          </ol>
+        </section>
 
         <div class="timeline">
           <article class="stop">
